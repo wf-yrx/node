@@ -1,0 +1,28 @@
+
+{
+    "apps":[{
+    "name":"nodeTest",
+    "script":"app.js",
+    "evn": {
+        "COMMON_VARIABLE":"true"
+    },
+    "env_production":{
+        "NODE_ENV":"production"
+    }
+}],
+    "deploy":{
+    "production":{
+        "user":"yueyagou",
+            "host":["47.107.74.126"],
+            "port":"12178",
+            "ref":"origin/master",
+            "repo":"git@github.com:wf-yrx/node.git",
+            "path":"/home/yueyagou/www/wf",
+            "ssh_options":"StrictHostKeyChecking=no",
+            "pre-deploy-local":"echo 'Deploy Done!'",
+            "env": {
+            "NODE_ENV":"production"
+        }
+    }
+    }
+}
