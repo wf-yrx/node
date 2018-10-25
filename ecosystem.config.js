@@ -25,6 +25,10 @@ module.exports = {
         port : '12178',
         repo : 'git@github.com:wf-yrx/node.git',
         path : '/home/yueyagou/www/wf',
+        ssh_options: "StrictHostKeyChecking=no",
+        env : {
+            "NODE_ENV": "production"
+        },
         'post-deploy' : 'git pull && npm install && pm2 reload ecosystem.config.js --env production'
     }
   }
